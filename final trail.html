@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-color: black;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .outer-con{
+            width: 400px;
+            height: 400px;
+            border-radius: 200px;
+            background-color:white;
+            position: relative;
+            margin: auto;
+            border: 3px ridge white;
+        }
+        .mid-point{
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: black;
+            position: absolute;
+            top:194px ;
+            left: 194px;
+            z-index: 9;
+        }
+        .reader{
+            width: 4px;
+            height: 380px;
+            background: black;
+            position: absolute;
+            left: 195px;
+            top:7px ;
+            transform: rotate(90deg);
+        }
+        .scale-0{
+            transform: rotate(0deg);
+        }
+        .scale-10{
+            transform: rotate(10deg);
+        }
+        .scale-20{
+            transform: rotate(20deg);
+        }
+        .scale-30{
+            transform: rotate(30deg);
+        }
+        .scale-40{
+            transform: rotate(40deg);
+        }
+        .scale-50{
+            transform: rotate(50deg);
+        }
+        .scale-60{
+            transform: rotate(60deg);
+        }
+        .scale-70{
+            transform: rotate(70deg);
+        }
+        .scale-80{
+            transform: rotate(80deg);
+        }
+        .scale-90{
+            transform: rotate(90deg);
+        }
+        .scale-100{
+            transform: rotate(100deg);
+        }
+        .scale-110{
+            transform: rotate(110deg);
+        }
+        .scale-120{
+            transform: rotate(120deg);
+        }
+        .scale-130{
+            transform: rotate(130deg);
+        }
+        .scale-140{
+            transform: rotate(140deg);
+        }
+        .scale-150{
+            transform: rotate(150deg);
+        }
+        .scale-160{
+            transform: rotate(160deg);
+        }
+        .scale-170{
+            transform: rotate(170deg);
+        }
+        .inner-container{
+            width: 320px;
+            height: 320px;
+            border-radius: 175px;
+            background-color: white;
+            position: absolute;
+            top: 42px;
+            left: 42px;
+        }
+        .rectangle{
+            width: 403px;
+            height: 200px;
+            background-color: black;
+            position: absolute;
+            top: -14px;
+            left: -5px;
+            border-bottom: 3px ridge white;
+        }
+        section{
+            transform: rotate(180deg);
+        }
+        .analogreader{
+            height: 120px;
+            width: 4px;
+            background-color: black;
+            position: absolute;
+            top: -10px;
+            left: 110px;
+            transform: rotate(90deg);
+        }
+        .container{
+            width: 100px;
+            height: 100px;
+            background-color:transparent;
+            position: absolute;
+            top: 147.14px;
+            left: 147.14px;
+            transform: rotate(0deg);
+            transition: all 0.4s;
+        }
+        .speed-0{
+            transform: rotate(0deg);
+        }
+        .speed-10{
+            transform: rotate(10deg);
+        }
+        .speed-20{
+            transform: rotate(20deg);
+        }
+        .speed-30{
+            transform: rotate(30deg);
+        }
+        .speed-40{
+            transform: rotate(40deg);
+        }
+        .speed-50{
+            transform: rotate(50deg);
+        }
+        .speed-60{
+            transform: rotate(60deg);
+        }
+        .speed-70{
+            transform: rotate(70deg);
+        }
+        .speed-80{
+            transform: rotate(80deg);
+        }
+        .speed-90{
+            transform: rotate(90deg);
+        }
+        .speed-100{
+            transform: rotate(100deg);
+        }
+        .speed-110{
+            transform: rotate(110deg);
+        }
+        .speed-120{
+            transform: rotate(120deg);
+        }
+        .speed-130{
+            transform: rotate(130deg);
+        }
+        .speed-140{
+            transform: rotate(140deg);
+        }
+        .speed-150{
+            transform: rotate(150deg);
+        }
+        .speed-160{
+            transform: rotate(160deg);
+        }
+        .speed-170{
+            transform: rotate(170deg);
+        }
+        .speed-180{
+            transform: rotate(180deg);
+        }
+        .acclerate{
+            width: 100px;
+            height: 50px;
+            background-color: grey;
+            color: black;
+            font-weight: bolder;
+            padding: 13px;
+            display: inline;
+            cursor: pointer;
+        }
+        .Deacclerate{
+            width: 120px;
+            height: 50px;
+            background-color: grey;
+            color: black;
+            padding: 13px;
+            font-weight: bolder;
+            display: inline;
+            cursor: pointer;
+        }
+        .t10{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 226px;
+            left: 348px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: green;
+        }
+        .t0{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 202px;
+            left: 348px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: green;
+        }
+        .t20{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 257px;
+            left: 345px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: green;
+        }
+        .t30{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 287px;
+            left: 336px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: green;
+        }
+        .t40{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 310px;
+            left: 318px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: green;
+        }
+        .t50{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 330px;
+            left: 298px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: green;
+        }
+        .t60{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 350px;
+            left: 274px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: gold;
+        }
+        .t70{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 362px;
+            left: 247px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: gold;
+        }
+        .t80{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 367px;
+            left: 219px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: gold;
+        }
+        .t90{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 367px;
+            left: 190px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: gold;
+        }
+        .t100{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 360px;
+            left: 165px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: orange;
+        }
+        .t110{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 349px;
+            left: 141px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: orange;
+        }
+        .t120{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 335px;
+            left: 120px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: orange;
+        }
+        .t130{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 319px;
+            left: 96px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: orange;
+        }
+        .t140{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 298px;
+            left: 86px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: red;
+        }
+        .t150{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 272px;
+            left: 76px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: red;
+        }
+        .t160{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 248px;
+            left: 70px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: red;
+        }
+        .t170{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 225px;
+            left: 66px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: red;
+        }
+        .t180{
+            width: 3px;
+            height: 3px;
+            background-color: transparent;
+            color: black;
+            position: absolute;
+            top: 201px;
+            left: 66px;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            color: red;
+        }
+        b{
+            color: grey;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            font-weight: bolder;
+        }
+        .last{
+            position: absolute;
+            top: -72px;
+            left: -203px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>SPEEDOMETER DESIGN-INTRODUCTION TO HMI</h1>>
+    <section>
+    <div class="outer-con">
+        <div class="mid-point"></div>>
+        <div class="reader scale-0"></div>
+        <div class="reader scale-10"></div>
+        <div class="reader scale-20"></div>
+        <div class="reader scale-30"></div>
+        <div class="reader scale-40"></div>
+        <div class="reader scale-50"></div>
+        <div class="reader scale-60"></div>
+        <div class="reader scale-70"></div>
+        <div class="reader scale-80"></div>
+        <div class="reader scale-90"></div>
+        <div class="reader scale-100"></div>
+        <div class="reader scale-110"></div>
+        <div class="reader scale-120"></div>
+        <div class="reader scale-130"></div>
+        <div class="reader scale-140"></div>
+        <div class="reader scale-150"></div>
+        <div class="reader scale-160"></div>
+        <div class="reader scale-170"></div>
+        <div class="reader scale-180"></div>
+        <div class="inner-container"></div>
+        <div class="rectangle"></div>
+        <div class="container speed-0">
+            <div class="analogreader"></div>
+        </div>
+        <div class="t10">10</div>
+        <div class="t20">20</div>
+         <div class="t30">30</div>
+        <div class="t40">40</div>
+        <div class="t50">50</div>
+        <div class="t60">60</div>
+        <div class="t70">70</div>
+        <div class="t80">80</div>
+        <div class="t90">90</div>
+        <div class="t100">100</div>
+        <div class="t110">110</div>
+        <div class="t120">120</div>
+        <div class="t130">130</div>
+        <div class="t140">140</div>
+        <div class="t150">150</div>
+        <div class="t160">160</div>
+        <div class="t170">170</div>
+        <div class="t180">180</div>
+        <div class="t0">0</div>
+    </div>
+     <div class="last" style="margin-left: 400px;margin-top: 30px;">
+        <button class="acclerate" onclick="increasespeed()">Increase</button>
+        <button class="Deacclerate"onclick="decreasespeed()">Decrease</button>
+        <fieldset style="width: 50%;display: inline;margin: 5%;color: white;">
+            <div style="display: inline;"><b>NAME:</b>SETHU ARAVINTH S</div>
+            <br>
+            <div style="display: inline;"><b>ROLL:</b>20BEC126</div>
+            <br>
+            <div style="display: inline;"><b>DEPT:</b>ECE</div>
+        </fieldset>
+    </div>
+    </section>
+   
+    <script src="C:\Users\Sethu Aravinth\Desktop\pointers exercise\hmitrailjs.js"></script>
+</body>
+</html> 
